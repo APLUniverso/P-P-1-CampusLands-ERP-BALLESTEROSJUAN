@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'MonaSans-Bold';
+    src: url('../media/fonts/MonaSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MonaSans-Regular';
+    src: url('../media/fonts/MonaSans-Regular.ttf') format('truetype');
+}
+
+body{
+    background-color: #313338;
+    color: #DFE4E8;
+    font-family: MonaSans-Regular, Helvetica, Arial, sans-serif !important;
+}

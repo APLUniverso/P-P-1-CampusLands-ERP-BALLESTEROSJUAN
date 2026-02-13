@@ -4,18 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signIn</title>
+
+    <link rel="stylesheet" href="./css/basics.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <form action="#" id="signInForm">
-        <input type="text" id="nombreSI" placeholder="Nombre de usuario">
-        <input type="text" id="contraseñaSI" placeholder="contraseña">
-        <button type="submit">LOGIN</button>
-    </form>
-    <form action="#" id="logInForm">
-        <input type="text" id="nombreLI" placeholder="Nombre de usuario">
-        <input type="text" id="contraseñaLI" placeholder="contraseña">
-        <button type="submit">LOGIN</button>
-    </form>
+    <div class="contenedor">
+        <header>
+            <img src="./media/img/logo.png" alt="logo">
+            <p>Campus Bucaramanga</p>
+            <p>Centro de Entrenamiento en Desarrollo de Software</p>
+        </header>
+        <main>
+            <div class="signInForm basicForm">
+                <img class="hcPosition sizefigures" src="./media/img/hologramCircle.png" alt="hologramCircle">
+                <form action="#" id="signInForm">
+                    <h3>¡Registrate ahora!</h3>
+                    <p>Únete a Campuslands y transforma tu vida en pocos meses para convertirte en Desarrollador de Software con el apoyo de expertos. Conecta con empresas líderes de Latinoamérica y EE. UU. para impulsar tu carrera laboral.</p>
+                    <input type="text" id="nombreSI" placeholder="Nombre de usuario">
+                    <input type="text" id="contraseñaSI" placeholder="contraseña">
+                    <button type="submit">LOGIN</button>
+                    <p>Al crear una cuenta, acepta nuestras</p>
+                    <a href="#">Políticas de privacidad de datos</a>
+                </form>
+                <div class="astro">
+                    <img src="./media/img/planetaAstronauta.svg" alt="planetaAstronauta">
+                    <img src="./media/img/astronauta.svg" alt="astronauta">
+                </div>
+            </div>
+            <div class="logInForm basicForm">
+                <form action="#" id="logInForm">
+                    <h3>Si ya estás registrado</h3>
+                    <h4>Inicia sesión</h4>
+                    <input type="text" id="nombreLI" placeholder="Nombre de usuario">
+                    <input type="text" id="contraseñaLI" placeholder="contraseña">
+                    <button type="submit">LOGIN</button>
+
+                    <div class="magia">
+                        <img src="./media/icons/magic.svg" alt="magia">
+                        <p>
+                            Si ya estás registrado, ingresa tu correo de
+                            <b>Gmail</b>
+                            y te enviaremos un código mágico que te abrirá las puertas a nuestra plataforma. ¡Vamos allá!
+                        </p>
+                    </div>
+                </form>
+                <img class="hpPosition sizefigures" src="./media/img/hologramPlanet.png" alt="hologramPlanet">
+            </div>
+        </main>
+    </div>
+    
 
     <script src="./utils/extract.js"></script>
 </body>
