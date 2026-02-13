@@ -14,6 +14,9 @@ signInForm.addEventListener("submit", function(e){
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Usuario registrado");
+
+    nombre.value = "";
+    contraseña.value = "";
 });
 
 logInForm.addEventListener("submit", function(e){
@@ -30,6 +33,7 @@ logInForm.addEventListener("submit", function(e){
 
     if (usuarioEncontrado) {
         alert("Bienvenido " + nombre);
+        window.location.href = "../pages/prueba.html";
     } else {
         alert("Credenciales incorrectas");
     }
