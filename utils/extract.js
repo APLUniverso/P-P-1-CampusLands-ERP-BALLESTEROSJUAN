@@ -4,36 +4,48 @@ const logInForm = document.getElementById("logInForm");
 signInForm.addEventListener("submit", function(e){
     e.preventDefault();
 
-    const nombre = document.getElementById("nombreSI").value;
+    const email = document.getElementById("emailSI").value;
     const contraseña = document.getElementById("contraseñaSI").value;
+    const nombre = document.getElementById("nombre").value;
+    const direccion = document.getElementById("direccion").value;
+    const telefono = document.getElementById("telefono").value;
 
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    usuarios.push({ nombre, contraseña });
-
+    let infoUser = {
+        'email':email,
+        'contraseña':contraseña,
+        'nombre':nombre,
+        'direccion':direccion,
+        'telefono':telefono,
+        'estado':'Inscrito'
+    }
+    usuarios.push(infoUser);
+    
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Usuario registrado");
 
-    nombre.value = "";
+    email.value = "";
     contraseña.value = "";
 });
 
 logInForm.addEventListener("submit", function(e){
     e.preventDefault();
 
-    const nombre = document.getElementById("nombreLI").value;
+    const email = document.getElementById("emailLI").value;
     const contraseña = document.getElementById("contraseñaLI").value;
 
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     const usuarioEncontrado = usuarios.find(user =>
-        user.nombre === nombre && user.contraseña === contraseña
+        user.email === email && user.contraseña === contraseña
     );
 
     if (usuarioEncontrado) {
-        alert("Bienvenido " + nombre);
-        window.location.href = "../pages/prueba.html";
+        alert("Bienvenido " + email);
+        //CAMBIAR ESTO
+        window.location.href = "./pages/prueba.html";
     } else {
         alert("Credenciales incorrectas");
     }
