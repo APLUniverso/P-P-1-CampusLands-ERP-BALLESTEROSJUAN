@@ -23,6 +23,7 @@ signInForm.addEventListener("submit", function(e){
     usuarios.push(infoUser);
     
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    console.log(usuarios)
 
     alert("Usuario registrado");
 
@@ -43,10 +44,10 @@ logInForm.addEventListener("submit", function(e){
     );
 
     if (usuarioEncontrado) {
-        alert("Bienvenido " + email);
-        //CAMBIAR ESTO
-        window.location.href = "./pages/prueba.html";
+        alert("Bienvenido");
     } else {
         alert("Credenciales incorrectas");
     }
+
+    return usuarioEncontrado
 });
