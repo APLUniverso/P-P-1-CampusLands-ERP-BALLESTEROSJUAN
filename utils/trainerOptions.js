@@ -25,6 +25,7 @@ trainerForm.addEventListener("submit", function(e){
 
         switch (option) {
             case 1:
+
                 console.log("Elegiste 1");
                 console.table(usuarios);
                 break;
@@ -33,11 +34,26 @@ trainerForm.addEventListener("submit", function(e){
                 console.log("Elegiste 2");
 
                 let camperNames = usuarios.map(camper => camper.nombre);
-                console.table(camperNames)
-                var IDcamper = prompt("Digite el ID del estudiante al cual quiere modificarle la nota")
+                console.table(camperNames);
+                //PEDIMOS EL ID DEL ESTUDIANTE QUE QUIERE CAMBIAR
+                const IDcamper = prompt("Digite el ID del estudiante al cual quiere modificarle la nota");
 
-                var skill = prompt(Object.keys(usuarios[IDcamper].notas).map((skill,index) => index +".  " + skill+"\n")+"seleccione una")
-                console.table(skill)
+                let skills = Object.keys(usuarios[IDcamper].notas)
+                //PEDIMOS LA SKILL A LA QUE QUIERE CAMBIAR LA NOTA
+                const skill = prompt(skills.map((skill,index) => index +".  " + skill).join("\n")+"\nseleccione una");
+
+                let subSkills = Object.keys(usuarios[IDcamper].notas[skills[skill]]);
+                //PEDIMOS LA SUBSKILL A PARA QUE CAMBIE LA NOTA
+                const subSkill = prompt(subSkills.map((subSkill,index)=>index +".  " + subSkill).join("\n")+"\nseleccione una");
+
+                //PEDIMOS LA NOTA NUEVA
+                const nota = Number(prompt("Digite la nota del estudiante"));
+                var usuariosNuevo = usuarios;
+                //ESTUDIANTE            NOTAS SKILL          SUBSKILL
+                usuariosNuevo[IDcamper].notas[skills[skill]][subSkills[subSkill]] = nota;
+
+                //SE GUARDA LA INFORMACION EN LA BASE DE DATOS
+                localStorage.setItem("usuarios", JSON.stringify(usuariosNuevo));
                 break;
 
             case 3:
@@ -47,8 +63,6 @@ trainerForm.addEventListener("submit", function(e){
             default:
                 console.log("Opción no válida");
         }
-        
-        console.log(option);
 
         
     } else {
