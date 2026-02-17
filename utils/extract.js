@@ -3,7 +3,6 @@ const logInForm = document.getElementById("logInForm");
 
 signInForm.addEventListener("submit", function(e){
     e.preventDefault();
-
     const email = document.getElementById("emailSI").value;
     const contraseña = document.getElementById("contraseñaSI").value;
     const nombre = document.getElementById("nombre").value;
@@ -18,7 +17,20 @@ signInForm.addEventListener("submit", function(e){
         'nombre':nombre,
         'direccion':direccion,
         'telefono':telefono,
-        'estado':'Inscrito'
+        'estado':'Inscrito',
+        'notas':{
+            'software':{
+                'python': null,
+                'javaScript':null,
+                'github':null
+            },
+            'ser':{
+                'autolab':null,
+            },
+            'ingles':{
+                'b1.1':null
+            }
+        }
     }
     usuarios.push(infoUser);
     
