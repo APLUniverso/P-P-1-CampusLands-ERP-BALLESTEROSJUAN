@@ -34,9 +34,8 @@ trainerForm.addEventListener("submit", function(e){
                 console.log("Elegiste 2");
 
                 let camperNames = usuarios.map(camper => camper.nombre);
-                console.table(camperNames);
                 //PEDIMOS EL ID DEL ESTUDIANTE QUE QUIERE CAMBIAR
-                const IDcamper = prompt("Digite el ID del estudiante al cual quiere modificarle la nota");
+                const IDcamper = prompt(camperNames.map((nombre,index) => index +".  " + nombre).join("\n")+"\nDigite el ID del estudiante al cual quiere modificarle la nota");
 
                 let skills = Object.keys(usuarios[IDcamper].notas)
                 //PEDIMOS LA SKILL A LA QUE QUIERE CAMBIAR LA NOTA

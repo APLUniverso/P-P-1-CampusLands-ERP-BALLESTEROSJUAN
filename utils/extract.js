@@ -33,9 +33,6 @@ signInForm.addEventListener("submit", function(e){
     console.log(usuarios)
 
     alert("Usuario registrado");
-
-    email.value = "";
-    contraseña.value = "";
 });
 
 logInForm.addEventListener("submit", function(e){
